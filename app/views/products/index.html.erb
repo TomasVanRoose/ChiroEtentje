@@ -1,0 +1,14 @@
+
+<ul>
+<% @categories.each do |category| %>
+	<li><%= category.name%></li>
+<% products = Product.where("category_id = ?", category) %>
+		<ul>
+			<% products.each do |product| %>
+				<li><%= product.name %></li>
+			<% end %>
+
+		</ul>
+	<% end %>
+</ul>
+		

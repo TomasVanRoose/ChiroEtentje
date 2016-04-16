@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-   root 'categories#new'
+   root 'products#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
    resources :categories
+   resources :products
 
 end
