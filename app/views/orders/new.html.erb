@@ -1,0 +1,21 @@
+<h3>Nieuwe bestelling</h3>
+<%= bootstrap_form_tag url: orders_path, :method=>'post', layout: :horizontal, label_col: "col-xs-8", control_col: "col-xs-3" do |f| %>
+
+	<%= f.number_field :table, hide_label: true, placeholder: "Tafelnummer", layout: :default %>
+	<%= f.text_field :groupname, hide_label: true, placeholder: "Tafelnaam", layout: :default %>
+
+
+	<% Category.all.each do |category| %>
+		<h4><%= category.name %></h4><br>
+		<% products = Product.where("category_id = ?", category) %>
+		<% products.each do |product| %>
+
+			<%= f.number_field product.name, value: 0, min: 0, label_class: "normal-font-weight" %>
+
+		<% end %>
+	<% end %>
+
+
+	<%= f.submit "Plaats bestelling" %>
+
+<% end %>
