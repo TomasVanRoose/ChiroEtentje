@@ -1,0 +1,29 @@
+
+<h3><%= @group.name %></h3>
+<h5>Tafel <%= @group.table_number %></h5>
+
+<% total = 0 %>
+
+<ul class="list-group">
+
+	<% @products.each do |product_name, amount| %>
+
+		<% product = Product.where(name: product_name).first %>
+		
+		<% price = Float(product.price) * Integer(amount) %>
+		<% total += price %>
+
+		<li class="list-group-item">
+			<%= amount %> <%= product_name %>
+			<span class="badge">€<%= price %><span>
+	
+		</li>
+
+
+	<% end %>
+
+	<li class="list-group-item active">
+		Totaal: 
+		<span class="badge">€<%= total %></span>
+	</li>
+</ul>

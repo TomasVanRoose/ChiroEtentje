@@ -1,14 +1,15 @@
 
-<ul>
-<% @categories.each do |category| %>
-	<li><%= category.name%></li>
-<% products = Product.where("category_id = ?", category) %>
-		<ul>
-			<% products.each do |product| %>
-				<li><%= product.name %></li>
-			<% end %>
+<ul class="list-group">
+	<% @categories.each do |category| %>
+		<li class="list-group-item active"><%= category.name%></li>
+		<% products = Product.where("category_id = ?", category) %>
+		<% products.each do |product| %>
+			<li class="list-group-item">
+				<span class="badge"> €<%= product.price %></span>
+				<%= product.name %>
+			</li>
+		<% end %>
 
-		</ul>
 	<% end %>
 </ul>
-		
+

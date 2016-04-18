@@ -1,0 +1,13 @@
+
+<h3>Tafels</h3>
+
+<div class="list-group">
+
+<% Group.all.each do |group| %>
+
+	<% groupstring = group.name + " (tafel " + group.table_number + ")" %>
+	<%= link_to groupstring, group_path(group), class: "list-group-item" %>
+
+<% end %>
+
+</div>

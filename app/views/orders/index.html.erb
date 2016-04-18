@@ -1,22 +1,27 @@
 <h3>Bestellingen</h3>
 
+
 <% Order.all.each do |order| %>
 
+	<ul class="list-group">
 	<% group = Group.where(id: order.group_id).first %>
 
-	<h5>Tafel: <%= group.table_number %></h5>
-	<h5>Naam: <%= group.name %></h5>
+	<li class="list-group-item active">
+		<%= group.name %> (tafel <%= group.table_number %>)
+	</li>
 
 	<% orders = OrderProduct.where(order_id: order.id) %>
 
-	<ul>
 	<% orders.each do |product_order| %>
 
 		<% product = Product.where(id: product_order.product_id).first %>
 
-		<li><%= product.name %>: <%= product_order.amount %></li>
+		<li class="list-group-item">
+			<span class="badge"><%= product_order.amount %></span>
+			<%= product.name %> 
+		</li>
 
 	<% end %>
-	</ul>
 
+	</ul>
 <% end %>

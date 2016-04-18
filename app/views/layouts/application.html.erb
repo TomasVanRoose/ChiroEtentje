@@ -5,6 +5,9 @@
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		
 	</head>
 	<body>
 
@@ -22,9 +25,10 @@
 				</div>	
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
+						<li><%= link_to "Tafels", groups_path %></li>
+						<li><%= link_to "Bestellingen", orders_path %></li>
 						<li><%= link_to "Producten", products_path %></li>
 						<li><%= link_to "Personen", users_path %></li>
-						<li><%= link_to "Categorieen", categories_path %></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
