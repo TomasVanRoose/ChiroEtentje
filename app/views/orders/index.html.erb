@@ -4,8 +4,19 @@
 
 	<% group = Group.where(id: order.group_id).first %>
 
-	<h5>Table: <%= group.table_number %></h5>
-	<h5>Name: <%= group.name %></h5>
+	<h5>Tafel: <%= group.table_number %></h5>
+	<h5>Naam: <%= group.name %></h5>
 
+	<% orders = OrderProduct.where(order_id: order.id) %>
+
+	<ul>
+	<% orders.each do |product_order| %>
+
+		<% product = Product.where(id: product_order.product_id).first %>
+
+		<li><%= product.name %>: <%= product_order.amount %></li>
+
+	<% end %>
+	</ul>
 
 <% end %>

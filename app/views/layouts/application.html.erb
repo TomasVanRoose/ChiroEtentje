@@ -18,10 +18,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<%= link_to "Producten", products_path, class: "navbar-brand" %>
+					<%= link_to "Nieuwe bestelling", orders_new_path, class: "navbar-brand" %>
 				</div>	
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
+						<li><%= link_to "Producten", products_path %></li>
 						<li><%= link_to "Personen", users_path %></li>
 						<li><%= link_to "Categorieen", categories_path %></li>
 					</ul>
