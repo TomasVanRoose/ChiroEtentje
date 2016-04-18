@@ -1,0 +1,11 @@
+<h3>Bestellingen</h3>
+
+<% Order.all.each do |order| %>
+
+	<% group = Group.where(id: order.group_id).first %>
+
+	<h5>Table: <%= group.table_number %></h5>
+	<h5>Name: <%= group.name %></h5>
+
+
+<% end %>

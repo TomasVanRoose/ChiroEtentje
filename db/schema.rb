@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417141348) do
+ActiveRecord::Schema.define(version: 20160417165417) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,33 @@ ActiveRecord::Schema.define(version: 20160417141348) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "order_products", force: :cascade do |t|
+    t.integer  "amount"
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "order_products", ["order_id"], name: "index_order_products_on_order_id"
+  add_index "order_products", ["product_id"], name: "index_order_products_on_product_id"
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["group_id"], name: "index_orders_on_group_id"
+
+  create_table "orders_products", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+  end
+
+  add_index "orders_products", ["order_id"], name: "index_orders_products_on_order_id"
+  add_index "orders_products", ["product_id"], name: "index_orders_products_on_product_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
