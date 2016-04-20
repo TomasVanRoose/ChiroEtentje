@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 	def create
 		@product = Product.new(product_params)
 		@product.save
-		redirect_to root_path
+		redirect_to products_path
 	end
 
 	private

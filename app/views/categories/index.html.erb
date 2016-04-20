@@ -1,8 +1,10 @@
 
-<ul>
+<%= link_to  "Nieuwe categorie", new_category_path, class: "btn btn-primary pull-right" %>
+<h3>Categorieen</h3>
+
+<ul class="list-group">
 
 	<% @categories.each do |category| %>
-		<li><%= category.name %></li>
-
+		<li class="list-group-item"><%= category.name %></li>
 	<% end %>
 </ul>
