@@ -1,9 +1,28 @@
 <h3>Nieuwe bestelling</h3>
-<%= bootstrap_form_tag url: orders_path, :method=>'post', layout: :horizontal, label_col: "col-xs-8", control_col: "col-xs-3" do |f| %>
 
-	<%= f.number_field :table, hide_label: true, placeholder: "Tafelnummer", layout: :default, required: true %>
-	<%= f.text_field :groupname, hide_label: true, placeholder: "Tafelnaam", layout: :default, required: true %>
 
+<%= bootstrap_form_tag url: orders_path, :method=>'post', layout: :horizontal, label_col: "col-sm-2 col-xs-8", control_col: "col-md-1 col-sm-2 col-xs-3" do |f| %>
+
+	<%= f.number_field :table, hide_label: true, placeholder: "Tafelnummer", layout: :default, required: true, id: "number_field" %>
+
+	<div class="list-group">
+
+	</div>
+
+
+	<%= f.text_field :groupname, hide_label: true, placeholder: "Tafelnaam", layout: :default, required: true, list: "tables", id: "name_field" %>
+
+	<datalist id="tables">
+
+	</datalist>
+
+	<datalist id="hidden">
+		<% Group.all.each do |group| %>
+		
+			<option table="<%= group.table_number %>" value="<%= group.name %>" />
+
+		<% end %>
+	</datalist>
 
 	<% Category.all.each do |category| %>
 		<h4><%= category.name %></h4><br>

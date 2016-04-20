@@ -5,8 +5,8 @@
 		<% products = Product.where("category_id = ?", category) %>
 		<% products.each do |product| %>
 			<li class="list-group-item">
-				<span class="badge"> €<%= product.price %></span>
 				<%= product.name %>
+				<span class="label label-danger pull-right"> €<%= product.price %></span>
 			</li>
 		<% end %>
 

@@ -17,8 +17,8 @@
 		<% product = Product.where(id: product_order.product_id).first %>
 
 		<li class="list-group-item">
-			<span class="badge"><%= product_order.amount %></span>
 			<%= product.name %> 
+			<span class="label label-danger pull-right">€ <%= product_order.amount %></span>
 		</li>
 
 	<% end %>
