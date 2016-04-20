@@ -27,4 +27,23 @@ class GroupsController < ApplicationController
 		@products = products
 
 	end
+
+	def index
+		respond_to do |format|
+			format.html
+			format.json {
+				@groups = Group.all
+
+				@json_groups = []
+				for @group in @groups
+					@json_groups.append({
+						id: @group.id,
+						table_number: @group.table_number,
+						name: @group.name
+					})
+				end
+				render json: @json_groups
+			}
+		end
+	end
 end

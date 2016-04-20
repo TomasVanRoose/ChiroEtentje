@@ -12,10 +12,6 @@
 
 	<%= f.text_field :groupname, hide_label: true, placeholder: "Tafelnaam", layout: :default, required: true, list: "tables", id: "name_field" %>
 
-	<datalist id="tables">
-
-	</datalist>
-
 	<datalist id="hidden">
 		<% Group.all.each do |group| %>
 		
