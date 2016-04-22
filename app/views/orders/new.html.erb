@@ -3,7 +3,7 @@
 
 <%= bootstrap_form_tag url: orders_path, :method=>'post', layout: :horizontal, label_col: "col-sm-2 col-xs-8", control_col: "col-md-1 col-sm-2 col-xs-3" do |f| %>
 
-	<%= f.number_field :table, hide_label: true, placeholder: "Tafelnummer", layout: :default, required: true, id: "number_field" %>
+	<%= f.number_field :table, hide_label: true, placeholder: "Tafelnummer", layout: :default, required: true, id: "number_field", min: "0" %>
 
 	<div class="list-group">
 
@@ -35,14 +35,14 @@
 						<label class="normal-font-weight text-left col-xs-4" for="<%= product.name %>"><%= product.name %></label>
 						<div class="col-xs-4">
 
-							<input value="0" min="0" class="form-control" name="<%= product.name %>" id="<%= product.name %>" type="number" />
+							<input value="0" min="0" class="form-control" name="<%= product.name %>" id="<%= product.name.delete(' ') %>" type="number" />
 						</div>
 						<div class="col-xs-4">
-						<button type="button" inputid="<%= product.name %>" id="plus" class="btn btn-default btn-sm">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						</button>
-						<button type="button" inputid="<%= product.name %>" id="minus" class="btn btn-default btn-sm">
+						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="minus" class="btn btn-default btn-sm">
 							<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+						</button>
+						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="plus" class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
 						</div>
 

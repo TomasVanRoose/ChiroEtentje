@@ -1,29 +1,31 @@
 
-<h3><%= @group.name %></h3>
-<h5>Tafel <%= @group.table_number %></h5>
+<div class="col-sm-5 col-md-4">
+	<h3><%= @group.name %></h3>
+	<h5>Tafel <%= @group.table_number %></h5>
 
-<% total = 0 %>
+	<% total = 0 %>
+	<ul class="list-group">
 
-<ul class="list-group">
+		<% @products.each do |product_name, amount| %>
 
-	<% @products.each do |product_name, amount| %>
+			<% product = Product.where(name: product_name).first %>
 
-		<% product = Product.where(name: product_name).first %>
-		
-		<% price = Float(product.price) * Integer(amount) %>
-		<% total += price %>
+			<% price = Float(product.price) * Integer(amount) %>
+			<% total += price %>
 
-		<li class="list-group-item">
-			<%= amount %> <%= product_name %>
-			<span class="label label-danger pull-right">€<%= price %><span>
-	
+			<li class="list-group-item">
+				<span class="label label-success"><%= amount %></span>
+				<%= product_name %>
+				<span class="label label-danger pull-right">€<%= price %><span>
+
+			</li>
+
+
+		<% end %>
+
+		<li class="list-group-item active">
+			Totaal: 
+			<span class="label label-danger pull-right">€<%= total %></span>
 		</li>
-
-
-	<% end %>
-
-	<li class="list-group-item active">
-		Totaal: 
-		<span class="label label-danger pull-right">€<%= total %></span>
-	</li>
-</ul>
+	</ul>
+</div>
