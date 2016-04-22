@@ -1,1 +1,0 @@
-$(document).ready(function(){$("#number_field").keyup(function(){$(".list-group").html(""),$("#hidden > *").each(function(){$(this).attr("table")==$("#number_field").val()&&$(".list-group").append('<a class="list-group-item">'+$(this).val()+"<a>")}),$(".list-group-item").click(function(){$("#name_field").val($(this).html()),$(".list-group").html("")})})});

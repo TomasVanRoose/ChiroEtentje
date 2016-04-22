@@ -14,10 +14,10 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets"
-@import "bootstrap"
-@import "rails_bootstrap_forms"
+@import "bootstrap-sprockets";
 
-.normal-font-weight 
-  font-weight: normal
+@import "bootswatch/flatly/variables";
 
+@import "bootstrap";
+
+@import "bootswatch/flatly/bootswatch";

@@ -25,14 +25,16 @@ $( document ).ready(function() {
 
 	});
 
-	// When the user clicks on a plus button add one to the input number field
+	// When the user clicks on a button add or subtract the input number field
 	$("button").click(function() {
 
+		// Get the id of the corresponding input field
 		inputid = $(this).attr("inputid");	
 
+		// Add one
 		if ($(this).attr("viewid") == "plus") {
 			$("#" + inputid).val(parseInt($("#" + inputid).val()) + 1);
-		}
+		} // Subtract one
 		else {
 			if (parseInt($("#" + inputid).val()) > 0) {
 				$("#" + inputid).val(parseInt($("#" + inputid).val()) - 1);

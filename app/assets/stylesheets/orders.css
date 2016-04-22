@@ -1,3 +1,9 @@
+
+.normal-font-weight {
+	font-weight: normal !important;	
+}
+
+
 .right-bottom-float {
 
 	position: fixed;
@@ -5,7 +11,6 @@
 	right: 0;
 
 	margin: 20px !important;
-
 
 }
 

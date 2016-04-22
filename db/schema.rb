@@ -45,18 +45,10 @@ ActiveRecord::Schema.define(version: 20160417165417) do
 
   add_index "orders", ["group_id"], name: "index_orders_on_group_id"
 
-  create_table "orders_products", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "order_id"
-  end
-
-  add_index "orders_products", ["order_id"], name: "index_orders_products_on_order_id"
-  add_index "orders_products", ["product_id"], name: "index_orders_products_on_product_id"
-
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_id"
-    t.string   "price"
+    t.float    "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

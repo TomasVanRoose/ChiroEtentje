@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,9 +25,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
 gem 'bootstrap_form'
+gem 'bootswatch-rails'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

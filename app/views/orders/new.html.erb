@@ -1,4 +1,4 @@
-<h3>Nieuwe bestelling</h3>
+<h1>Nieuwe bestelling</h1>
 
 
 <%= bootstrap_form_tag url: orders_path, :method=>'post', layout: :horizontal, label_col: "col-sm-2 col-xs-8", control_col: "col-md-1 col-sm-2 col-xs-3" do |f| %>
@@ -24,7 +24,7 @@
 		<% Category.all.each do |category| %>
 
 			<div class="col-md-3">
-				<h4><%= category.name %></h4><br>
+				<h3><%= category.name %></h3><br>
 
 				<% products = Product.where("category_id = ?", category) %>
 
@@ -32,16 +32,15 @@
 
 					<div class="form-group">
 
-						<label class="normal-font-weight text-left col-xs-4" for="<%= product.name %>"><%= product.name %></label>
-						<div class="col-xs-4">
-
-							<input value="0" min="0" class="form-control" name="<%= product.name %>" id="<%= product.name.delete(' ') %>" type="number" />
+						<label class="normal-font-weight text-left col-xs-4 col-lg-5" for="<%= product.name %>"><%= product.name %></label>
+						<div class="col-xs-4 col-lg-3">
+							<input value="0" class="form-control" name="<%= product.name %>" id="<%= product.name.delete(' ') %>" type="text" />
 						</div>
 						<div class="col-xs-4">
-						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="minus" class="btn btn-default btn-sm">
+						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="minus" class="btn btn-default btn-xs">
 							<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
 						</button>
-						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="plus" class="btn btn-default btn-sm">
+						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="plus" class="btn btn-default btn-xs">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
 						</div>
@@ -54,7 +53,7 @@
 	</div>
 
 
-	<%= f.submit "Plaats bestelling", class: "btn btn-primary btn-lg right-bottom-float" %>
+	<%= f.submit "Plaats bestelling", class: "btn btn-primary right-bottom-float" %>
 
 <% end %>
 <br>
