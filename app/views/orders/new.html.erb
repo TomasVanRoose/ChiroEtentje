@@ -14,24 +14,41 @@
 
 	<datalist id="hidden">
 		<% Group.all.each do |group| %>
-		
+
 			<option table="<%= group.table_number %>" value="<%= group.name %>" />
 
 		<% end %>
 	</datalist>
 
-	<% Category.all.each do |category| %>
-		<h4><%= category.name %></h4><br>
-		<% products = Product.where("category_id = ?", category) %>
-		<% products.each do |product| %>
+	<div class="row">
+		<% Category.all.each do |category| %>
 
-			<%= f.number_field product.name, value: 0, min: 0, label_class: "normal-font-weight" %>
+			<div class="col-md-3">
+				<h4><%= category.name %></h4><br>
 
+				<% products = Product.where("category_id = ?", category) %>
+
+				<% products.each do |product| %>
+
+					<div class="form-group">
+
+						<label class="normal-font-weight text-left col-xs-6" for= <%= product.name %>><%= product.name %></label>
+						<div class="col-xs-4">
+
+							<input value="0" min="0" class="form-control" name=<%= product.name %> id=<%= product.name %> type="number" />
+						</div>
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						</button>
+					</div>
+
+				<% end %>
+			</div>
 		<% end %>
-	<% end %>
+	</div>
 
 
-	<%= f.submit "Plaats bestelling" %>
+	<%= f.submit "Plaats bestelling", class: "btn btn-primary right-bottom-float" %>
 
 <% end %>
 <br>
