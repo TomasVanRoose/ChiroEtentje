@@ -23,8 +23,19 @@ $( document ).ready(function() {
 			$(".list-group").html('');
 		});
 
-
 	});
 
+	// When the user clicks on a plus button add one to the input number field
+	$("#plus").click(function() {
+		inputid = $(this).attr("inputid");	
+		$("#" + inputid).val(parseInt($("#" + inputid).val()) + 1);
+	});
 	
+	// When the user clicks on a minus button subtract one from the input number field
+	$("#minus").click(function() {
+		inputid = $(this).attr("inputid");	
+		if (parseInt($("#" + inputid).val()) > 0) {
+			$("#" + inputid).val(parseInt($("#" + inputid).val()) - 1);
+		}
+	});
 });

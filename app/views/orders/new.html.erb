@@ -32,14 +32,20 @@
 
 					<div class="form-group">
 
-						<label class="normal-font-weight text-left col-xs-6" for= <%= product.name %>><%= product.name %></label>
+						<label class="normal-font-weight text-left col-xs-4" for="<%= product.name %>"><%= product.name %></label>
 						<div class="col-xs-4">
 
-							<input value="0" min="0" class="form-control" name=<%= product.name %> id=<%= product.name %> type="number" />
+							<input value="0" min="0" class="form-control" name="<%= product.name %>" id="<%= product.name %>" type="number" />
 						</div>
-						<button type="button" class="btn btn-default">
+						<div class="col-xs-4">
+						<button type="button" inputid="<%= product.name %>" id="plus" class="btn btn-default btn-sm">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
+						<button type="button" inputid="<%= product.name %>" id="minus" class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+						</button>
+						</div>
+
 					</div>
 
 				<% end %>
@@ -48,7 +54,7 @@
 	</div>
 
 
-	<%= f.submit "Plaats bestelling", class: "btn btn-primary right-bottom-float" %>
+	<%= f.submit "Plaats bestelling", class: "btn btn-primary btn-lg right-bottom-float" %>
 
 <% end %>
 <br>
