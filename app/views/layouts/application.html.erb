@@ -24,11 +24,11 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><%= link_to "Tafels", groups_path %></li>
-						<li><%= link_to "Bestellingen", orders_path %></li>
-						<li><%= link_to "Menu", products_path %></li>
-						<li><%= link_to "Categorieën", categories_path %></li>
-						<li><%= link_to "Personen", users_path %></li>
+						<li class="<%= 'active' if params[:controller] == 'groups' %>"><%= link_to "Tafels", groups_path %></li>
+						<li class="<%= 'active' if params[:controller] == 'orders' %>"><%= link_to "Bestellingen", orders_path %></li>
+						<li class="<%= 'active' if params[:controller] == 'products' %>"><%= link_to "Menu", products_path %></li>
+						<li class="<%= 'active' if params[:controller] == 'categories' %>"><%= link_to "Categorieën", categories_path %></li>
+						<li class="<%= 'active' if params[:controller] == 'users' %>"><%= link_to "Personen", users_path %></li>
 					</ul>
 				</div>
 			</div>
