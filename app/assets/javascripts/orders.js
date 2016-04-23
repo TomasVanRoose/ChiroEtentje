@@ -1,6 +1,6 @@
 
 
-$( document ).ready(function() {
+$(document).on("page:change", function() {
 
 
 	// Function to add a table with the names corresponding to the table number 
