@@ -25,7 +25,24 @@
 
 		<li class="list-group-item active">
 			Totaal: 
-			<span class="label label-danger pull-right">€<%= total %></span>
+			<span class="label label-danger pull-right" id="total">€<%= total %></span>
 		</li>
 	</ul>
+</div>
+
+<div class="col-md-4 pull-right">
+
+	<h2>Afrekenen</h2>
+
+	<div class="form-group">
+		<label class="lead">Ontvangen</label>
+		<input type="number" class="form-control" id="payed_number_field" value="0"> 
+	</div>
+
+	<hr>
+	<p class="lead">
+	Wisselgeld
+	</p>
+	<span class="label label-lg label-primary" id="refund">0</span>
+
 </div>
