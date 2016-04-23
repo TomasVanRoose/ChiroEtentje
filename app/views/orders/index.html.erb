@@ -3,7 +3,7 @@
 
 <div class="col-sm-5 col-md-4">
 
-<% Order.all.each do |order| %>
+<% @orders.reverse_each do |order| %>
 
 	<ul class="list-group">
 	<% group = Group.where(id: order.group_id).first %>

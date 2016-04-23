@@ -34,13 +34,13 @@
 
 						<label class="normal-font-weight text-left col-xs-4 col-lg-5" for="<%= product.name %>"><%= product.name %></label>
 						<div class="col-xs-4 col-lg-3">
-							<input value="0" class="form-control" name="<%= product.name %>" id="<%= product.name.delete(' ') %>" type="text" />
+							<input value="0" class="form-control" name="<%= product.name %>" id="<%= product.name.delete(' ').delete(')').delete('(') %>" type="text" />
 						</div>
 						<div class="col-xs-4">
-						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="minus" class="btn btn-default btn-xs">
+						<button type="button" inputid="<%= product.name.delete(' ').delete(')').delete('(') %>" viewid="minus" class="btn btn-default btn-xs">
 							<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
 						</button>
-						<button type="button" inputid="<%= product.name.delete(' ') %>" viewid="plus" class="btn btn-default btn-xs">
+						<button type="button" inputid="<%= product.name.delete(' ').delete(')').delete('(') %>" viewid="plus" class="btn btn-default btn-xs">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
 						</div>

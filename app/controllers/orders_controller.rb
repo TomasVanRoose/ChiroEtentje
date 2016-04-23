@@ -3,6 +3,10 @@ class OrdersController < ApplicationController
 	def new
 	end
 
+	def index
+		@orders = Order.all
+	end
+
 	def create
 	
 		order = Order.new
@@ -33,6 +37,6 @@ class OrdersController < ApplicationController
 
 		end
 
-		redirect_to root_path	
+		redirect_to orders_path	
 	end 
 end
